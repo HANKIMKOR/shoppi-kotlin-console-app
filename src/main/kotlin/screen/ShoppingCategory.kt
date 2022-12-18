@@ -7,7 +7,7 @@ Step 3. 프로젝트 전역에서 참조하는 상수
 
  */
 class ShoppingCategory : Screen() {
-    private fun showCategories() {
+    fun showCategories() {
         ScreenStack.push(this)
         val categories = arrayOf("패션", "전자기기", "반려동물용품")
         for (category in categories) {
@@ -27,8 +27,8 @@ class ShoppingCategory : Screen() {
         } else {
             if (categories.contains(selectedCategory)) {
                 // TODO 2. 카테코리 상품 목록 보여주기
-                val shoppingProductList = ShoppingProductList()
-                shoppingProductList.showProducts(selectedCategory)
+                val shoppingProductList = ShoppingProductList(selectedCategory)
+                shoppingProductList.showProducts()
             } else {
                 // TODO 3. 카테고리 목록에 없는 값을 입력하는 경우
                 showErrorMessage(selectedCategory)
