@@ -3,7 +3,11 @@ package screen
 import LINE_DIVIDER
 import extensions.getNotEmptyString
 
-class ShoppingHome {
+/*
+Step1. 화면 이동을 관리하는 Stack
+Step2. 장바구니 이전화면 이동 구현
+ */
+class ShoppingHome : Screen() {
 
     fun start() {
         showWelcomeMessage()
@@ -12,11 +16,8 @@ class ShoppingHome {
     }
 
     private fun showWelcomeMessage() {
-        /*
-            Step 1. 인사말 출력
-            Step 2. 사용자 이름 받기
-            Step 3. 입력 받은 사용자 이름 출력
-             */
+        ScreenStack.push(this)
+
         println("안녕하세요, Shoppi 에 오신 것을 환영합니다!")
         println("쇼핑을 계속 하시려면 이름을 입력해주세요 :)")
 
